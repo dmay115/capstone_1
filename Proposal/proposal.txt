@@ -1,0 +1,38 @@
+1. What goal will your website be designed to achieve?
+
+My website will put all tracking information on one page for a user.  This page will update with the latest available tracking information and be able to send SMS or email as package progresses or when it is delivered.
+
+2. What kind of users will visit your site? In other words, what is the demographic of
+your users?
+
+Anyone wanting to have more up to date information on their tracking and to be able to see all of their packages in one place.
+
+3. What data do you plan on using? You may have not picked your actual API yet,
+which is fine, just outline what kind of data you would like it to contain.
+
+data plan and APIs are in outline file
+
+4. In brief, outline your approach to creating your project (knowing that you may not
+know everything in advance and that these details might change later). Answer
+questions like the ones below, but feel free to add more information:
+a. What does your database schema look like?
+b. What kinds of issues might you run into with your API?
+
+The APIs should be pretty straight forward.  Scaling could be an issue if any require payment, but as a test case, it should be fine.
+
+c. Is there any sensitive information you need to secure?
+
+Photos from user's webcam would be considered sensitive, but I am trying to have them store that local.  Also the user might have to upload their phone number for the SMS functionality
+
+d. What functionality will your app include?
+
+User visits homepage of webstie to see all of their tracking info.  SMS messages will be sent if the user chooses to have that feature used
+
+e. What will the user flow look like?
+
+User uploads tracking number and the website should do the rest.  There will be a decent amount more setup if the user chooses to use the webcam feature.
+
+f. What features make your site more than CRUD? Do you have any stretch
+goals?
+
+I am trying to add webcam functionality where it can watch for packages on your front porch. 
