@@ -1,0 +1,5 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{ rated_drink.name }}</h1>
+<p>Your Rating: {{rated_drink.user_rating}}/5</p>
+<p>Comments: {{rated_drink.user_comments}}</p>
+{% endblock %}

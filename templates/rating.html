@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{{ drink.strDrink }}</h1>
+<img src="{{ drink.strDrinkThumb }}" alt="{{ drink.strDrink }}" width="200" />
+<h2>What did you think of the {{ drink.strDrink }}?</h2>
+<form method="POST" id="rating_form">
+    {{ form.hidden_tag() }} {% for field in form if field.widget.input_type !=
+    'hidden' %} {% for error in field.errors %}
+    <span class="text-danger">{{ error }}</span>
+    {% endfor %} {{ field(placeholder=field.label.text, class="form-control") }}
+    {% endfor %}
+    <button>Submit</button>
+</form>
+{% endblock %}

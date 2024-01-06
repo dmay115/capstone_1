@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Random Cocktail</h1>
+<p>Serving up your random cocktail. Enjoy!</p>
+<h2>{{ name }}</h2>
+<h3>{{ mes1 }} of {{ ing1 }}</h3>
+<h3>{{ mes2 }} of {{ ing2 }}</h3>
+{% if ing3 != none %}
+<h3>{{ mes3 }} of {{ ing3 }}</h3>
+{% endif %} {% if ing4 != none %}
+<h3>{{ mes4 }} of {{ ing4 }}</h3>
+{% endif %} {% if ing5 != none %}
+<h3>
+    {{ mes5 }}{% for word in words_to_check %}{% if word in mes5 %} of{% endif
+    %}{% endfor %} {{ ing5 }}
+</h3>
+{% endif %} {% if ing6 != none %}
+<h3>{{ mes6 }} of {{ ing6 }}</h3>
+{% endif %} {% if ing7 != none %}
+<h3>{{ mes7 }} of {{ ing7 }}</h3>
+{% endif %} {% if ing8 != none %}
+<h3>{{ mes8 }} of {{ ing8 }}</h3>
+{% endif %} {% endblock %}

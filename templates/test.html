@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Bartender App</h1>
+{% for drink in data %}
+<ul>
+    <a href="/cocktails/{{drink.idDrink}}" id="{{drink.idDrink}}">
+        {{drink.strDrink}}</a
+    >
+</ul>
+{% endfor %} {% endblock %}
