@@ -167,7 +167,6 @@ def submit_ingredient():
         new_ingredient = Ingredients_On_Hand(
             userID=user_id, ingredient=submitted_ingredient
         )
-        print(new_ingredient)
         db.session.add(new_ingredient)
         db.session.commit()
 
@@ -187,11 +186,9 @@ def delete_ingredient():
         data = request.get_json()
         ingredient_id = data.get("ingredientId")
 
-        # Fetch the ingredient from the database
         ingredient_on_hand = Ingredients_On_Hand.query.get(ingredient_id)
         print(ingredient_on_hand)
         if ingredient_on_hand:
-            # Delete the ingredient
             db.session.delete(ingredient_on_hand)
             db.session.commit()
 
@@ -217,7 +214,7 @@ def drink_search():
     except Exception as e:
         return jsonify({"error": str(e)})
 
-    return render_template("test.html", data=data_dict["drinks"])
+    return render_template("search.html", data=data_dict["drinks"])
 
 
 @app.route("/cocktails/<int:drink_id>")
@@ -291,10 +288,8 @@ def show_random_drink():
         response = requests.get(api_url)
         data = response.json()
 
-        # Convert JSON string to a Python dictionary
         data_dict = json.loads(json.dumps(data))
 
-        # Extract 'strInstructions' from each item in 'drinks'
         words_to_check = ["oz, shot, shots, part, parts, dashes, dash"]
         id = [item["idDrink"] for item in data_dict["drinks"]]
         name = [item["strDrink"] for item in data_dict["drinks"]]
@@ -325,10 +320,8 @@ def show_random_drink():
         # ing15 = [item["strIngredient15"] for item in data_dict["drinks"]]
         # ing16 = [item["strIngredient16"] for item in data_dict["drinks"]]
 
-        # Now 'instructions' is a list containing 'strInstructions' from each item
         print(id)
 
-        # Return a JSON response containing the 'strInstructions' list
         res = id[0]
 
     except Exception as e:
@@ -360,27 +353,3 @@ def show_random_drink():
         mes10=mes10[0],
         words_to_check=words_to_check,
     )
-
-
-# @app.route("/")
-# def get_instructions_from_api():
-#     api_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
-
-#     try:
-#         response = requests.get(api_url)
-#         data = response.json()
-
-#         # Convert JSON string to a Python dictionary
-#         data_dict = json.loads(json.dumps(data))
-
-#         # Extract 'strInstructions' from each item in 'drinks'
-#         instructions = [item["strInstructions"] for item in data_dict["drinks"]]
-
-#         # Now 'instructions' is a list containing 'strInstructions' from each item
-#         print(instructions)
-
-#         # Return a JSON response containing the 'strInstructions' list
-#         return jsonify(instructions[0])
-
-#     except Exception as e:
-#         return jsonify({"error": str(e)})

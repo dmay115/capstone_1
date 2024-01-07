@@ -535,7 +535,6 @@ document.addEventListener("DOMContentLoaded", function () {
         submitBtn.addEventListener("click", function () {
             const ingredient = document.getElementById("ing_search").value;
             console.log(ingredient);
-            // Assuming you have a Flask route to handle the submission
             fetch("/submit-ingredient", {
                 method: "POST",
                 headers: {
@@ -560,14 +559,12 @@ document.addEventListener("DOMContentLoaded", function () {
                             "Error submitting ingredient:",
                             data.error
                         );
-                        // Display error message to the user, e.g., using an alert
                         alert("Error submitting ingredient: " + data.error);
                         location.reload();
                     }
                 })
                 .catch(function (error) {
                     console.error("Error submitting ingredient:", error);
-                    // Display error message to the user, e.g., using an alert
                     alert("Error submitting ingredient: " + error.message);
                 });
         });
@@ -593,7 +590,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     return response.json();
                 })
                 .then(function (data) {
-                    // Optionally, you can remove the ingredient from the UI
                     button.parentNode.remove();
                     console.log("Ingredient deleted successfully");
                 })
@@ -611,26 +607,18 @@ document.addEventListener("DOMContentLoaded", function () {
         submitSelectionBtn.addEventListener("click", function () {
             const selectedIngredients = getSelectedIngredients();
 
-            // Extract ingredientName values from the objects
             const ingredientNames = selectedIngredients.map(
                 (ingredient) => ingredient.ingredientName
             );
-
-            console.log(ingredientNames);
-
-            // Create a query string from the selected ingredient names
             const queryString = ingredientNames.join(",");
-
-            console.log(queryString);
-            // Redirect to the Flask route with the query string
             window.location.href = `/drink-search?ingredients=${queryString}`;
         });
     }
     function getSelectedIngredients() {
-        var checkboxes = document.querySelectorAll(
+        const checkboxes = document.querySelectorAll(
             ".ingredientCheckbox:checked"
         );
-        var selectedIngredients = Array.from(checkboxes).map(function (
+        const selectedIngredients = Array.from(checkboxes).map(function (
             checkbox
         ) {
             return {
