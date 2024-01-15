@@ -3,49 +3,31 @@
     <head>
         <meta charset="UTF-8" />
         <title>Bartender</title>
-
-        <link
-            rel="stylesheet"
-            href="https://unpkg.com/bootstrap/dist/css/bootstrap.css"
-        />
         <script src="https://unpkg.com/jquery"></script>
-        <script src="https://unpkg.com/popper"></script>
-        <script src="https://unpkg.com/bootstrap"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
         />
+        <link rel="stylesheet" href="/static/style.css"/>
         <link
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         />
-        <link rel="stylesheet" href="/static/stylesheets/style.css" />
         <link rel="shortcut icon" href="/static/favicon.ico" />
     </head>
-
-    <body class="{% block body_class %}{% endblock %}">
-        <nav class="navbar navbar-expand">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <a href="/" class="navbar-brand"> </a>
-                </div>
-                <ul class="nav navbar-nav navbar-right">
-                    {% if not g.user %}
-                    <li><a href="/signup">Sign up</a></li>
-                    <li><a href="/login">Log in</a></li>
-                    {% else %}
-                    <li>
-                        <a href="/users/{{ g.user.id }}">
-                            <img
-                                src="{{ g.user.image_url }}"
-                                alt="{{ g.user.username }}"
-                            />
-                        </a>
-                    </li>
-                    <li><a href="/logout">Log out</a></li>
-                    {% endif %}
-                </ul>
-            </div>
-        </nav>
+    <div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Bartender App</h1>
+        <h3 class="sub-header">Find delicious drinks based on what you have on hand</h3>
+      </div>
+      </div>
+    <div class="container">
+        <ul class="nav nav-pills nav-justified">
+          <li class="nav-link"><a href="#">Home</a></li>
+          <li class="nav-link"><a href="/bar">Your Ingredients</a></li>
+          <li class="nav-link"><a href="/history">Your Drink Menu</a></li>
+        </ul>
+      </div>
         <div class="container">
             {% for category, message in
             get_flashed_messages(with_categories=True) %}

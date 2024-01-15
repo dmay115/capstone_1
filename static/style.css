@@ -1,0 +1,144 @@
+.jumbotron {
+    min-width: 585px;
+    margin: 10px auto;
+    border: 2px solid goldenrod;
+    background-color: rgb(27, 20, 23);
+    outline: 4px solid goldenrod; /* Thicker outside line */
+    outline-offset: 7px;   /* Compensate for the thicker line to keep the size consistent */
+    padding: 20px; 
+  }
+
+.container {
+    padding: 20px;
+}
+
+body {
+    background-color: rgb(22, 21, 24);
+    color: gold;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1, h2, h3, p {
+    color: goldenrod;
+  }
+
+  #ingreidentForm {
+    background-color: rgb(22, 21, 24);
+    color: goldenrod;
+    padding: 20px;
+    margin: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  a{
+    color: black;
+  }
+
+  .ingredientCheckbox {
+    /* Your checkbox styles */
+    margin-right: 10px;
+  }
+
+  .deleteBtn {
+    background-color: gold;
+    color: black;
+    border: none;
+    margin: 3px;
+    padding: 3px 3px; 
+    cursor: pointer;
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    font-size: 12px; 
+  }
+
+  .deleteBtn:hover {
+    background-color: black;
+    color: goldenrod;
+  }
+
+  .search-container {
+    margin: 20px;
+  }
+
+  #ing_search {
+    padding: 10px;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+    margin-right: 10px;
+    color: black;
+    background-color: goldenrod;
+  }
+
+  #submitBtn {
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .search-list {
+    color: gold;
+  }
+  .gold-checkbox-label {
+      cursor: pointer;
+      padding-left: 5px;
+      color: #ffd700;
+  }
+  .gold-checkbox-label:hover {
+      text-decoration: underline;
+  }
+
+ .nav {
+    background-color: gold;
+    color: black;
+    border: none;
+    margin: 3px;
+    padding: 3px 3px; 
+    cursor: pointer;
+    border-radius: 5px; 
+    font-size: 12px; 
+}
+.nav-link{
+    background-color: gold;
+    color: black;
+    border: none;
+    margin: 3px;
+    padding: 3px 3px; 
+    cursor: pointer;
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+    font-size: 1.5em; 
+}
+.nav>li>a:hover{
+    background-color: goldenrod;
+    transition: background-color 0.3s, color 0.3s; 
+}
+  #submitBtn:hover {
+    background-color: black;
+    color: goldenrod;
+  }
+
+  .suggestions {
+    margin-top: 10px;
+  }
+
+  .suggestions ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .suggestions li {
+    margin-bottom: 5px;
+  }

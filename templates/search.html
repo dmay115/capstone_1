@@ -1,9 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Bartender App</h1>
-{% for drink in data %}
-<ul>
-    <a href="/cocktails/{{drink.idDrink}}" id="{{drink.idDrink}}">
-        {{drink.strDrink}}</a
-    >
-</ul>
-{% endfor %} {% endblock %}
+<div class="row">
+    {% for drink in data %}
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ drink.strDrink }}</h5>
+                <a class="btn btn-primary" href="/cocktails/{{ drink.idDrink }}"
+                    >View Details</a
+                >
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

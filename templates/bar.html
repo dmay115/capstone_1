@@ -1,28 +1,35 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Your Bar</h1>
 <p>Add ingredients to your bar, then search for a cocktail</p>
-<form id="ingreidentForm">
-    <div>
-        <ul>
-            {% for ingredient in ingredients %}
-            <li>
-                <input
-                    type="checkbox"
-                    class="ingredientCheckbox"
-                    value="{{ ingredient.ingredient }}"
-                    data-ingredient-id="{{ ingredient.on_hand_ID }}"
-                />
-                {{ ingredient.ingredient }}<button
-                    class="deleteBtn"
-                    data-ingredient-id="{{ ingredient.on_hand_ID }}"
-                >
-                    x
-                </button>
-            </li>
-            {% endfor %}
-        </ul>
+<form id="ingredientForm">
+    <div class="row">
+        {% for ingredient in ingredients %}
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <input
+                        type="checkbox"
+                        class="ingredientCheckbox"
+                        value="{{ ingredient.ingredient }}"
+                        data-ingredient-id="{{ ingredient.on_hand_ID }}"
+                    />
+                    <label class="gold-checkbox-label">
+                        {{ ingredient.ingredient }}
+                    </label>
+                    <button
+                        class="deleteBtn btn btn-danger"
+                        data-ingredient-id="{{ ingredient.on_hand_ID }}"
+                    >
+                        x
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-    <button type="button" id="submitSelection">Submit Selection</button>
+    <button type="button" class="deleteBtn btn btn-danger" id="submitSelection">
+        Submit Selection
+    </button>
 </form>
 <div class="search-container">
     <input
