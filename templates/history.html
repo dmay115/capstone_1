@@ -2,7 +2,11 @@
 <h1>Rated Drinks</h1>
 <ul>
     {% for drink in rated_drinks %}
-    <a href="/history/{{drink.user_drink_ID}}" id="{{drink.user_drink_ID}}">
+    <a
+        href="/history/{{drink.user_drink_ID}}"
+        class="drinks"
+        id="{{drink.user_drink_ID}}"
+    >
         {{drink.name}}</a
     >
     {% endfor %} {% endblock %}

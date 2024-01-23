@@ -45,7 +45,6 @@ body {
   }
 
   .ingredientCheckbox {
-    /* Your checkbox styles */
     margin-right: 10px;
   }
 
@@ -80,6 +79,24 @@ body {
   }
 
   #submitBtn {
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .rate {
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .drinks {
     background-color: goldenrod;
     color: black;
     border: none;
@@ -142,3 +159,25 @@ body {
   .suggestions li {
     margin-bottom: 5px;
   }
+
+  #rating_form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#rate_submit {
+    background-color: goldenrod;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+button:hover {
+    background-color: goldenrod;
+}

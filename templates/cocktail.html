@@ -12,6 +12,8 @@
 <p>Instructions: {{ drink.strInstructions }}</p>
 <p>
     Tried this cocktail?
-    <a href="/rating/{{drink.idDrink}}" id="{{ drink.idDrink }}">Rate It!</a>
+    <a href="/rating/{{drink.idDrink}}" id="{{ drink.idDrink }}" class="rate"
+        >Rate It!</a
+    >
 </p>
 {% endblock %}
